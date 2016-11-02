@@ -18,13 +18,18 @@ class FilaAPI(APIView):
 		
 		string = str(idUsuario)
 		string += " esta na posicao "
-		string += controleFila.posicao(idUsuario)
+		string += str(controleFila.posicao(idUsuario))
 
 		return Response(string)
 
-	def post(self, request, fotmat=None):		
+	def post(self, request, fotmat=None):
+		idCaixa = request.GET.get('idCaixa', '')
+		
 
+
+	def put(self, request, fotmat=None):
 		idUsuario = request.GET.get('idUsuario', '')
+
 		if (idUsuario != ''):
 			controleFila.put(idUsuario)
 		
@@ -34,3 +39,7 @@ class FilaAPI(APIView):
 		string += str(controleFila.posicao(idUsuario))
 
 		return Response(string)
+
+# class CaixaAPI(APIView):
+
+

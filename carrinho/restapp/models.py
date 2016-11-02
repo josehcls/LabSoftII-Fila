@@ -29,3 +29,28 @@ class ControleFila():
 			if id == self.fila.queue[i]:
 				return (i+1)
 		return (0)
+
+	def atualizaFila(self, id):
+		usuario = self.lista.pop()
+		return usuario
+
+class Caixa():
+	def __init__(self):
+		self.id = 0
+		self.livre = False
+		self.clienteId = None
+		self.valor = 0.0
+
+	def liberaCaixa (self)
+		self.livre = True
+		self.clienteId = None
+		self.valor = 0.0
+
+	def setCliente (self, clienteId)
+		self.livre = False
+		self.clienteId = clienteId
+
+	def setValor (self, valor):
+		self.valor = valor
+
+
