@@ -1,4 +1,4 @@
-"""carrinho URL Configuration
+"""fila URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -20,5 +20,6 @@ from restapp import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^carrinho/', views.FilaAPI.as_view())
+    url(r'^fila/', views.FilaAPI.as_view()),
+    url(r'^caixa/', views.CaixaAPI.as_view())
 ]

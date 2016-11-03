@@ -1,5 +1,5 @@
 """
-WSGI config for carrinho project.
+WSGI config for fila project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "carrinho.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "fila.settings")
 
 application = get_wsgi_application()
