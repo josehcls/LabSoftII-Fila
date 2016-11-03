@@ -16,17 +16,16 @@ class FilaAPI(APIView):
 	def get(self, request, format=None):		
 		idUsuario = request.GET.get('idUsuario', '')
 
-		caixa = controleFila.verificaCaixa(idUsuario)
-		posicao = controleFila.posicao(idUsuario)
+		caixa = int(controleFila.verificaCaixa(idUsuario))
+		posicao = int(controleFila.posicao(idUsuario))
 
-
-		if (posicao > 0):
+		if (caixa > 0):
+			string = "Va para o caixa "
+			string += str(caixa)
+		elif (posicao > 0):
 			string = str(idUsuario)
 			string += " esta na posicao "
 			string += str(posicao)			
-		elif (caixa > 0):
-			string = "Va para o caixa "
-			string += str(caixa)
 		else:
 			string = str(idUsuario)
 			string += " nao esta na fila"

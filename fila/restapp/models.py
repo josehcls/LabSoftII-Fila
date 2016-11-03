@@ -36,7 +36,10 @@ class ControleFila():
 
 		url = "http://127.0.0.1:8000/caixa/"
 
-		querystring = {"idUsuario":"\"" + idUsuario + "\""}
+		# querystring = {"idUsuario":"\"" + str(idUsuario) + "\""}
+		querystring = {"idUsuario":idUsuario}
+
+		print(querystring)
 		headers = {
 		    'cache-control': "no-cache",
 		    }
@@ -151,6 +154,9 @@ class ControleCaixa():
 		idUsuario = int(idUsuario)
 
 		for caixa in self.caixas:
+			print(caixa.clienteId)
+			print(idUsuario)
+			print(caixa.id)
 			if caixa.clienteId == idUsuario:
 				return caixa.id
 		return 0
